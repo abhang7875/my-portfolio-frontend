@@ -1,9 +1,11 @@
-import Certifications from './components/Certifications.jsx';
+// import Certifications from './components/Certifications.jsx';
+// import Headline from './components/Headline.jsx';
 
+import SocialMediaProfiles from "./components/SocialMediaProfiles";
 function App() {
   return (
     <div className="App">
-      <Certifications />
+      <SocialMediaProfiles />
       </div>
   );
 }
