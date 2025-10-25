@@ -1,11 +1,11 @@
 // import Certifications from './components/Certifications.jsx';
 // import Headline from './components/Headline.jsx';
 
-import SkillsManager from "./components/SkillsManager";
+import Experience from "./components/Experience";
 function App() {
   return (
     <div className="App">
-      <SkillsManager />
+      <Experience />
     </div>
   );
 }

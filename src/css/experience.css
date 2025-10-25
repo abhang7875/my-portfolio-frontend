@@ -1,0 +1,64 @@
+.experience-container {
+  padding: 20px;
+}
+
+.experience-card {
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 10px;
+  margin: 10px 0;
+  background-color: #fafafa;
+}
+
+.btn-add,
+.btn-edit,
+.btn-delete {
+  margin: 5px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-add {
+  background-color: #28a745;
+  color: white;
+}
+.btn-edit {
+  background-color: #007bff;
+  color: white;
+}
+.btn-delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+}
+
+.modal-content input {
+  width: 100%;
+  margin: 6px 0;
+  padding: 8px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+}
