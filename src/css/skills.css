@@ -1,0 +1,143 @@
+.skills-wrapper {
+  padding: 20px;
+  background: #f9fafc;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 850px;
+  margin: 20px auto;
+}
+
+h3 {
+  margin-bottom: 16px;
+  color: #333;
+}
+
+/* Category section */
+.category-section {
+  margin-bottom: 20px;
+}
+
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.category-chip {
+  background: #e8f0fe;
+  color: #007bff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-chip.active {
+  background: #007bff;
+  color: white;
+}
+
+.category-chip:hover {
+  background: #cde0ff;
+}
+
+.add-category-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.category-add-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.category-add-box input {
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.category-add-box button {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background: #ff4b4b !important;
+}
+
+/* Add Skill Section */
+.add-skill-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.add-skill-section input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.add-skill-section button {
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+/* Skills */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #eef5ff;
+  padding: 6px 10px;
+  border-radius: 20px;
+}
+
+.skill-label {
+  color: #007bff;
+}
+
+.category-tag {
+  color: #777;
+  font-size: 12px;
+}
+
+.delete-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #ff4b4b;
+  font-size: 16px;
+}
+
+.delete-btn:hover {
+  transform: scale(1.2);
+  color: #ff0000;
+}
+
+.no-data {
+  color: #888;
+  font-style: italic;
+}
