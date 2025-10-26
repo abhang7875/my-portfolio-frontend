@@ -1,4 +1,4 @@
-.social-media-section {
+/* .social-media-section {
     max-width: 700px;
     margin: 40px auto;
     font-family: 'Inter', sans-serif;
@@ -183,4 +183,15 @@
 
 .delete-btn:hover {
   background-color: #fecaca;
+} */
+
+.icon {
+  max-width: 40px;
+  width: 100%;
+  height: auto;
+  padding: 8%;
+  background-color: rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 10px;
 }

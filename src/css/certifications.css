@@ -1,38 +1,38 @@
 .certifications-section {
-    max-width: 700px;
-    margin: 40px auto;
-    font-family: 'Inter', sans-serif;
-    color: #222;  
-    border-radius: 10px;
-    padding: 40px 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.8);
+  max-width: 700px;
+  margin: 40px auto;
+  font-family: "Inter", sans-serif;
+  color: #222;
+  border-radius: 10px;
+  padding: 40px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .header {
-    display : flex;
-    justify-content : space-between;
-    align-items: center;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .header h2 {
-    font-size: 1.8rem;
-    font-weight: 600;
+  font-size: 1.8rem;
+  font-weight: 600;
 }
 
 .add-btn {
-    background-color: #2563eb;
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  background-color: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .add-btn:hover {
-    background-color: #1e40af;
+  background-color: #1e40af;
 }
 
 .cert-card {
@@ -42,32 +42,25 @@
   background: #fff;
   border-radius: 10px;
   padding: 16px 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   margin-bottom: 15px;
   transition: transform 0.2s ease;
 }
 
 .cert-card:hover {
-    transform: translateY(-3px);
-}
-
-.icon {
-    display: block;
-    width: 50px;
-    height: 50px;
-    margin-right: 16px;
+  transform: translateY(-3px);
 }
 
 .details h3 {
-    margin: 0;
-    font-size: 1.1 rem;
-    font-weight: 600;
+  margin: 0;
+  font-size: 1.1 rem;
+  font-weight: 600;
 }
 
 .details p {
-    margin: 4px 0 0 0;
-    font-size: 0.9rem;
-    color: #666;
+  margin: 4px 0 0 0;
+  font-size: 0.9rem;
+  color: #666;
 }
 
 .actions button {
@@ -101,7 +94,7 @@
   border-radius: 10px;
   padding: 30px;
   width: 400px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   position: relative;
   animation: fadeIn 0.3s ease;
 }
@@ -147,8 +140,14 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .actions {
@@ -186,7 +185,7 @@
 }
 
 .certificate-image {
-    max-width: 100%;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-    margin-top: 20px;
+  max-width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  margin-top: 20px;
 }

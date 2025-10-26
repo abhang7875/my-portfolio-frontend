@@ -1,0 +1,12 @@
+.navbar-container {
+  gap: 30px;
+}
+
+.navbar-icons {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  background: #f1f5f9;
+  color: #555;
+  transition: all 0.3s ease;
+}
