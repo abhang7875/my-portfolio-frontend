@@ -1,64 +1,56 @@
-.experience-container {
-  padding: 20px;
-}
-
 .experience-card {
-  border: 1px solid #ddd;
-  padding: 12px;
-  border-radius: 10px;
-  margin: 10px 0;
-  background-color: #fafafa;
+  background-color: #ffe6c9; /* soft peach tone */
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.btn-add,
-.btn-edit,
-.btn-delete {
-  margin: 5px;
-  padding: 6px 10px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+.experience-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.btn-add {
-  background-color: #28a745;
-  color: white;
-}
-.btn-edit {
-  background-color: #007bff;
-  color: white;
-}
-.btn-delete {
-  background-color: #dc3545;
-  color: white;
+/* Make it fully responsive */
+@media (max-width: 576px) {
+  .experience-card {
+    max-width: 100%;
+  }
 }
 
-.modal {
-  position: fixed;
-  top: 0;
+/* --- RESPONSIBILITIES LIST --- */
+.responsibility-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.responsibility-list li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 8px;
+  color: #444;
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+/* Custom bullet using a circle or icon */
+.responsibility-list li::before {
+  content: "✔";
+  position: absolute;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  top: 0;
+  color: #ff7e00; /* vibrant orange for contrast */
+  font-size: 0.9rem;
+  font-weight: bold;
 }
 
-.modal-content {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 400px;
-}
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .education-card {
+    max-width: 100%;
+    padding: 1rem;
+  }
 
-.modal-content input {
-  width: 100%;
-  margin: 6px 0;
-  padding: 8px;
-}
-
-.modal-actions {
-  display: flex;
-  justify-content: space-between;
+  .responsibility-list li {
+    font-size: 0.9rem;
+  }
 }

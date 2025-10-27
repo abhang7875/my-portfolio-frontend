@@ -34,54 +34,75 @@ export default function Experience() {
   };
 
   return (
-    <div className="experience-container">
-      <h2>Experience Details</h2>
-      <button onClick={() => setShowAddModal(true)} className="btn-add">
-        + Add Experience
-      </button>
+    <>
+      <section className="container-fluid py-5" id="experience">
+        <div className="row justify-content-center">
+          <div className="col-10 text-start">
+            <h2 className="h2 mb-3">
+              Experience Details{" "}
+              <span
+                style={{
+                  display: "inline-block",
+                  width: "240px",
+                  height: "2px",
+                  background:
+                    "linear-gradient(90deg, #fcde19, #ff3d00, #fcde19)",
+                  marginLeft: "10px",
+                  verticalAlign: "middle",
+                }}
+              ></span>
+            </h2>
+            <div className="experience-list">
+              {experiences.map((exp) => (
+                <div
+                  key={exp.id}
+                  className="experience-card mx-auto my-3 p-3 shadow-sm"
+                >
+                  <h3 className="h3">{exp.client}</h3>
+                  <small className="text-muted fw-semibold mb-1">
+                    {exp.from}–{exp.to}
+                  </small>
+                  <h6 className="fw-semibold mb-1">{exp.designation}</h6>
 
-      <div className="experience-list">
-        {experiences.map((exp) => (
-          <div key={exp.id} className="experience-card">
-            <h3>{exp.designation}</h3>
-            <p>
-              <b>Client:</b> {exp.client}
-            </p>
-            <p>
-              <b>From:</b> {exp.from}
-            </p>
-            <p>
-              <b>To:</b> {exp.to}
-            </p>
-            <ul>
-              {exp.responsibilities?.map((r) => (
-                <li>{r}</li>
+                  <ul className="responsibility-list mb-0">
+                    {exp.responsibilities?.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                  {/* <button
+                    onClick={() => handleUpdate(exp)}
+                    className="btn-edit"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    onClick={() => handleDelete(exp.id)}
+                    className="btn-delete"
+                  >
+                    Delete
+                  </button> */}
+                </div>
               ))}
-            </ul>
-            <button onClick={() => handleUpdate(exp)} className="btn-edit">
-              Edit
-            </button>
-            <button onClick={() => handleDelete(exp.id)} className="btn-delete">
-              Delete
-            </button>
+            </div>
           </div>
-        ))}
+        </div>
+      </section>
+      <div className="experience-container">
+        {showAddModal && (
+          <AddExperienceModal
+            onClose={() => setShowAddModal(false)}
+            refresh={fetchAllExperiences}
+          />
+        )}
+
+        {showUpdateModal && (
+          <UpdateExperienceModal
+            onClose={() => setShowUpdateModal(false)}
+            refresh={fetchAllExperiences}
+            updateData={selectedExperience}
+          />
+        )}
       </div>
-
-      {showAddModal && (
-        <AddExperienceModal
-          onClose={() => setShowAddModal(false)}
-          refresh={fetchAllExperiences}
-        />
-      )}
-
-      {showUpdateModal && (
-        <UpdateExperienceModal
-          onClose={() => setShowUpdateModal(false)}
-          refresh={fetchAllExperiences}
-          updateData={selectedExperience}
-        />
-      )}
-    </div>
+    </>
   );
 }

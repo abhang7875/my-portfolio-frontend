@@ -29,7 +29,7 @@ export default function Headline() {
                 display: "inline-block",
                 width: "240px",
                 height: "2px",
-                background: "linear-gradient(90deg, #fcde19, #ff3d00)",
+                background: "linear-gradient(90deg, #fcde19, #ff3d00, #fcde19)",
                 marginLeft: "10px",
                 verticalAlign: "middle",
               }}

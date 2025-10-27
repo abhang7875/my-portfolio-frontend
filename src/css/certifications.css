@@ -189,3 +189,8 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   margin-top: 20px;
 }
+.cert-card {
+  background-color: #ffe6c9; /* soft peach tone */
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}

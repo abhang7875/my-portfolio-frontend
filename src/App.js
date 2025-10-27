@@ -18,7 +18,7 @@ function App() {
 
   const navItems = [
     { name: "Home", icon: "fa-solid fa-house" },
-    { name: "Resume", icon: "fa-solid fa-file-lines" },
+    { name: "Learnings", icon: "fa-solid fa-file-lines" },
     { name: "Work", icon: "fa-solid fa-briefcase" },
     { name: "Contact", icon: "fa-solid fa-address-card" },
   ];
@@ -27,12 +27,12 @@ function App() {
     switch (active) {
       case "Home":
         return <HomeModal />;
-      case "Resume":
+      case "Learnings":
         return <Education />;
       case "Work":
-        return <Projects />;
-      case "Contact":
         return <Experience />;
+      case "Contact":
+        return <Projects />;
       default:
         return <HomeModal />;
     }
