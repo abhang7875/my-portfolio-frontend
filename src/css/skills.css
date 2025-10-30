@@ -1,4 +1,4 @@
-.skills-wrapper {
+/* .skills-wrapper {
   padding: 20px;
   background: #f9fafc;
   border-radius: 10px;
@@ -140,4 +140,31 @@ h3 {
 .no-data {
   color: #888;
   font-style: italic;
+}
+*/ .skills-wrapper {
+  background: #f8fafc;
+  padding: 40px;
+  border-radius: 16px;
+}
+
+.skills-category h4 {
+  font-size: 1.4rem;
+  color: #222;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.skill-chip {
+  background: #9ba5af4c;
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+  padding: 6px 14px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.skill-chip:hover {
+  background: linear-gradient(90deg, #ff7e00, #ff3c00);
+  color: #fff;
+  transform: translateY(-2px);
 }

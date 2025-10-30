@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import AddEducationModal from "./AddEducationModal";
 import UpdateEducatioModal from "./UpdateEducationModal";
 import Certifications from "./Certifications";
+import { API_URLS } from "../constants";
 
 export default function Education() {
   const [education, setEducation] = useState([]);
@@ -15,7 +16,7 @@ export default function Education() {
 
   const fetchEducations = async () => {
     try {
-      const response = await fetch("http://localhost:8090/getAllEducations");
+      const response = await fetch(API_URLS.EDUCATION.VIEW_ALL);
       const data = await response.json();
       setEducation(data);
     } catch (error) {
@@ -25,7 +26,7 @@ export default function Education() {
 
   const deleteEducation = async (id) => {
     try {
-      await fetch(`http://localhost:8090/deleteEducation/${id}`, {
+      await fetch(API_URLS.EDUCATION.DELETE({ id }), {
         method: "DELETE",
       });
       fetchEducations();
@@ -68,21 +69,21 @@ export default function Education() {
                     </p>
                   </div>
                   {/* <div className="actions">
-              <button
-                className="edit-btn"
-                onClick={() => setUpdateModalData(edu)}
-              >
-                {" "}
-                Edit{" "}
-              </button>
-              <button
-                className="delete-btn"
-                onClick={() => deleteEducation(edu.id)}
-              >
-                {" "}
-                Delete{" "}
-              </button>
-            </div> */}
+                    <button
+                      className="edit-btn"
+                      onClick={() => setUpdateModalData(edu)}
+                    >
+                      {" "}
+                      Edit{" "}
+                    </button>
+                    <button
+                      className="delete-btn"
+                      onClick={() => deleteEducation(edu.id)}
+                    >
+                      {" "}
+                      Delete{" "}
+                    </button>
+                  </div> */}
                 </div>
               ))}
           </div>

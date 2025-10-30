@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AddExperienceModal from "./AddExperienceModal";
 import UpdateExperienceModal from "./UpdateExperienceModal";
+import { API_URLS } from "../constants";
 import "../css/experience.css";
 
 export default function Experience() {
@@ -14,14 +15,14 @@ export default function Experience() {
   }, []);
 
   const fetchAllExperiences = async () => {
-    const res = await fetch("http://localhost:8090/getAllExperiences");
+    const res = await fetch(API_URLS.EXPERIENCE.VIEW_ALL);
     const data = await res.json();
     setExperiences(data);
   };
 
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this experience?")) {
-      await fetch(`http://localhost:8090/deleteExperience/${id}`, {
+      await fetch(API_URLS.EXPERIENCE.DELETE({ id }), {
         method: "DELETE",
       });
       fetchAllExperiences();

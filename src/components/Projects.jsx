@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import AddProjectModal from "./AddProjectModal.jsx";
 import UpdateProjectModal from "./UpdateProjectModal";
 import "../css/projects.css";
+import { API_URLS } from "../constants.jsx";
 
 function Projects() {
   const [projects, setProjects] = useState([]);
@@ -9,11 +10,9 @@ function Projects() {
   const [showUpdateModal, setShowUpdateModal] = useState(false);
   const [updateData, setUpdateData] = useState(null);
 
-  const API_URL = "http://localhost:8090";
-
   const fetchProjects = async () => {
     try {
-      const response = await fetch(`${API_URL}/getAllProjects`);
+      const response = await fetch(API_URLS.PROJECTS.VIEW_ALL);
       const data = await response.json();
       setProjects(data);
     } catch (error) {
@@ -29,7 +28,7 @@ function Projects() {
     if (!window.confirm("Are you sure you want to delete this project?"))
       return;
     try {
-      const response = await fetch(`${API_URL}/deletePrjectById/${id}`, {
+      const response = await fetch(API_URLS.PROJECTS.DELETE({ id }), {
         method: "DELETE",
       });
       if (response.ok) {
@@ -44,74 +43,76 @@ function Projects() {
   };
 
   return (
-    <div className="projects-container">
-      <h2>Projects</h2>
-      <button className="add-btn" onClick={() => setShowAddModal(true)}>
-        + Add Project
-      </button>
-
-      <table className="projects-table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>From</th>
-            <th>To</th>
-            <th>Organisation</th>
-            <th>Description</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {projects.map((proj) => (
-            <tr key={proj.id}>
-              <td>{proj.name}</td>
-              <td>{proj.from}</td>
-              <td>{proj.to}</td>
-              <td>{proj.organisationId}</td>
-              <td>
-                <ul>
-                  {proj.description?.map((d, i) => (
-                    <li key={i}>{d}</li>
-                  ))}
-                </ul>
-              </td>
-              <td>
-                <button
-                  className="edit-btn"
-                  onClick={() => {
-                    setUpdateData(proj);
-                    setShowUpdateModal(true);
-                  }}
+    <>
+      <section className="container-fluid py-5" id="experience">
+        <div className="row justify-content-center">
+          <div className="col-10 text-start">
+            <h2 className="h2 mb-3">
+              Projects{" "}
+              <span
+                style={{
+                  display: "inline-block",
+                  width: "240px",
+                  height: "2px",
+                  background:
+                    "linear-gradient(90deg, #fcde19, #ff3d00, #fcde19)",
+                  marginLeft: "10px",
+                  verticalAlign: "middle",
+                }}
+              ></span>
+            </h2>
+            <div className="experience-list">
+              {projects.map((project) => (
+                <div
+                  key={project.id}
+                  className="experience-card mx-auto my-3 p-3 shadow-sm"
                 >
-                  Edit
-                </button>
-                <button
-                  className="delete-btn"
-                  onClick={() => handleDelete(proj.id)}
-                >
-                  Delete
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+                  <h3 className="h3">{project.name}</h3>
+                  <small className="text-muted fw-semibold mb-1">
+                    {project.from}–{project.to}
+                  </small>
+                  <h6 className="fw-semibold mb-1">{project.origanisation}</h6>
 
-      {showAddModal && (
-        <AddProjectModal
-          onClose={() => setShowAddModal(false)}
-          refresh={fetchProjects}
-        />
-      )}
+                  <ul className="responsibility-list mb-0">
+                    {project.description?.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                  {/* <button
+                        onClick={() => handleUpdate(exp)}
+                        className="btn-edit"
+                      >
+                        Edit
+                      </button>
+                      <button
+                        onClick={() => handleDelete(exp.id)}
+                        className="btn-delete"
+                      >
+                        Delete
+                      </button> */}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+      <div className="experience-container">
+        {showAddModal && (
+          <AddProjectModal
+            onClose={() => setShowAddModal(false)}
+            refresh={fetchProjects}
+          />
+        )}
 
-      {showUpdateModal && (
-        <UpdateProjectModal
-          onClose={() => setShowUpdateModal(false)}
-          refresh={fetchProjects}
-          updateData={updateData}
-        />
-      )}
-    </div>
+        {showUpdateModal && (
+          <UpdateProjectModal
+            onClose={() => setShowUpdateModal(false)}
+            refresh={fetchProjects}
+            updateData={updateData}
+          />
+        )}
+      </div>
+    </>
   );
 }
 

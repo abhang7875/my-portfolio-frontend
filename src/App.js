@@ -20,7 +20,7 @@ function App() {
     { name: "Home", icon: "fa-solid fa-house" },
     { name: "Learnings", icon: "fa-solid fa-file-lines" },
     { name: "Work", icon: "fa-solid fa-briefcase" },
-    { name: "Contact", icon: "fa-solid fa-address-card" },
+    { name: "Projects", icon: "fa-solid fa-address-card" },
   ];
 
   const getContentForActive = () => {
@@ -31,7 +31,7 @@ function App() {
         return <Education />;
       case "Work":
         return <Experience />;
-      case "Contact":
+      case "Projects":
         return <Projects />;
       default:
         return <HomeModal />;

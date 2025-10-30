@@ -194,3 +194,8 @@
   border-radius: 12px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.certificate-logo {
+  max-width: 50%;
+  float: right;
+}

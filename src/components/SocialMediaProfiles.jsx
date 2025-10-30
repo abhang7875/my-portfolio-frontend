@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AddProfileModal from "./AddProfileModal";
 import UpdateProfileModal from "./UpdateProfileModal";
+import { API_URLS } from "../constants";
 
 export default function SocialMediaProfiles() {
   const [profiles, setProfiles] = useState([]);
@@ -13,7 +14,7 @@ export default function SocialMediaProfiles() {
 
   const fetchSocialMediaProfiles = async () => {
     try {
-      const response = await fetch("http://localhost:8090/getAllProfiles");
+      const response = await fetch(API_URLS.PROFILES.VIEW_ALL);
       const data = await response.json();
       setProfiles(data);
     } catch (error) {
@@ -23,7 +24,7 @@ export default function SocialMediaProfiles() {
 
   const deleteProfile = async (id) => {
     try {
-      await fetch(`http://localhost:8090/deleteProfile/${id}`, {
+      await fetch(API_URLS.PROFILES.DELETE({ id }), {
         method: "DELETE",
       });
       fetchSocialMediaProfiles();
